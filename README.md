@@ -1,6 +1,6 @@
 # WeddWish
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=WEDDING+WISHLIST+WEB+TEMPLATE;RESPONSIVE+%26+AUTH+READY)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=ONE+WISHLIST,+MANY+HEARTS)](https://git.io/typing-svg)
 
 WeddWish is a full website project based on online wedding wishlists and gift contributions.  
 This is a responsive and user‑friendly website that makes supporting newlyweds simple and transparent. [file:4][file:7]
@@ -14,12 +14,10 @@ Supporters can browse the wishlist, see target amounts and progress, and contrib
 
 Key highlights:
 
-- Modern dark UI with gold branding and glassmorphism‑style cards  
-- Register / Login with JWT (username, email, password, Instapay number, address)  
+- Modern dark UI with amberAccent branding  
+- Easy Register / Login
 - Protected user profile page showing personal info and wishlist items  
-- Add‑item form with image upload, goal amount, description, and progress display  
-- Contact page styled to match the auth layout  
-- LocalStorage-based session handling for a smooth UX [file:3][file:7]
+- Contact page.... Just reach out. 
 
 ---
 
@@ -32,5 +30,7 @@ Key highlights:
 
 ## Screenshot
 
-_Add one or more screenshots of your home / register / profile pages here._
+![Uploading Screenshot 2025-12-20 023956.png…]()
 
+
+![Uploading Screenshot 2025-12-20 015841.png…]()
