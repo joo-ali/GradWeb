@@ -30,7 +30,13 @@ Key highlights:
 
 ## Screenshot
 
-![Uploading Screenshot 2025-12-20 023956.png…]()
+
+Home Page:
+
+<img width="1895" height="966" alt="Screenshot 2025-12-20 023956" src="https://github.com/user-attachments/assets/2c13e663-51b3-4ac5-9cd7-cb05fc134566" />
 
 
-![Uploading Screenshot 2025-12-20 015841.png…]()
+Login Page:
+
+<img width="1892" height="967" alt="image" src="https://github.com/user-attachments/assets/3f0bae6e-cd98-4af4-acf1-a69d09905df4" />
+
