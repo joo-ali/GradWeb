@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>WeddWish | Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+  <nav class="nav nav_top">
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" width="250"></a>
+    </div>
+    <div id="mySidenav" class="sidenav">
+            <a href="index.html">HOME</a>
+			<a href="user-profile.html">MY PROFILE</a>
+            <a href="contact.html">CONTACT</a>
+			<a href="about.html">ABOUT US</a>
+        </div>
+    <span id="menuBtn" onclick="toggleNav()" style="position: fixed; top: 15px; right: 20px; font-size: 30px; cursor: pointer; color: white; z-index: 2;">☰</span>
+  </nav>
+
+  <!-- PROFILE SECTION -->
+  <section class="profile-page">
+    <div class="profile-header">
+      <div class="profile-info">
+        <h1>Ali Ali</h1>
+        <span class="info-label">INFO</span>
+
+        <div class="info-card">
+          <div class="icon-circle"><i class="fa fa-phone"></i></div>
+          <div class="info-text">
+            <span class="info-title">InstaPay Number</span>
+            <span class="info-value">1119153636</span>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="icon-circle"><i class="fa fa-envelope"></i></div>
+          <div class="info-text">
+            <span class="info-title">Email</span>
+            <span class="info-value">aa@gmail.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-avatar">
+        <img src="images/profile.jpg" alt="Profile">
+      </div>
+    </div>
+
+    <h2 class="wishlist-title">My Wishlist</h2>
+	
+	<div class="profile-actions">
+	  <button
+		id="additem-btn"
+		class="submit-button"
+		onclick="window.location.href='add-item.html'">
+		Add
+	  </button>
+
+	  <button id="share-profile-btn" class="submit-button">
+		Share
+	  </button>
+	</div>
+
+
+    <div class="wishlist-grid">
+      <div class="wishlist-card">
+        <span class="card-menu">●●●</span>
+        <img src="images/item1.jpg" alt="Item 1">
+		<div class="item-info">
+		<h3>ring</h3>
+		<p class="item-price">$1,000 goal</p>
+
+		<!-- progress / loading price -->
+		<div class="donation-progress">
+		  <div class="donation-progress-fill" style="width: 40%;"></div>
+		  <span class="donation-progress-text">$400 / $1,000</span>
+		</div>
+
+		<!-- donate button -->
+		<button class="submit-button donate-btn">
+		  Donate
+		</button>
+      </div>
+
+      <div class="wishlist-card">
+        <span class="card-menu">●●●</span>
+        <img src="images/item2.jpg" alt="Item 2">
+		<div class="item-info">
+		<h3>ring</h3>
+		<p class="item-price">$1,000 goal</p>
+
+		<!-- progress / loading price -->
+		<div class="donation-progress">
+		  <div class="donation-progress-fill" style="width: 40%;"></div>
+		  <span class="donation-progress-text">$400 / $1,000</span>
+		</div>
+
+		<!-- donate button -->
+		<button class="submit-button donate-btn">
+		  Donate
+		</button>
+      </div>
+	  
+	  <div class="wishlist-card">
+        <span class="card-menu">●●●</span>
+        <img src="images/item2.jpg" alt="Item 3">
+		<div class="item-info">
+		<h3>ring</h3>
+		<p class="item-price">$1,000 goal</p>
+
+		<!-- progress / loading price -->
+		<div class="donation-progress">
+		  <div class="donation-progress-fill" style="width: 40%;"></div>
+		  <span class="donation-progress-text">$400 / $1,000</span>
+		</div>
+
+		<!-- donate button -->
+		<button class="submit-button donate-btn">
+		  Donate
+		</button>
+      </div>
+	  
+	  <div class="wishlist-card">
+        <span class="card-menu">●●●</span>
+        <img src="images/item1.jpg" alt="Item 4">
+		<div class="item-info">
+		<h3>ring</h3>
+		<p class="item-price">$1,000 goal</p>
+
+		<!-- progress / loading price -->
+		<div class="donation-progress">
+		  <div class="donation-progress-fill" style="width: 40%;"></div>
+		  <span class="donation-progress-text">$400 / $1,000</span>
+		</div>
+
+		<!-- donate button -->
+		<button class="submit-button donate-btn">
+		  Donate
+		</button>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    function toggleNav() {
+      const sidenav = document.getElementById("mySidenav");
+      const menuBtn = document.getElementById("menuBtn");
+      if (sidenav.style.width === "250px") {
+        sidenav.style.width = "0";
+        menuBtn.innerHTML = "☰";
+      } else {
+        sidenav.style.width = "250px";
+        menuBtn.innerHTML = "&times;";
+      }
+    }
+  </script>
+    <!-- --------------------------------------------FOOTER-------------------------------------------------------->
+        <footer>
+        <div class="pages"> 
+            <a href="index.html"><img class="aimg" src="images/logo_green.png" width="250"></a> 
+            <p>WeddWish brings people together by turning traditional wedding gifts into a collaborative experience—couples build their wishlist, donors support them with contributions, and everyone stays connected through real-time updates.</p>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="doc">
+            <h3>Navigation</h3>
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="donate.html">DONATE</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+        <div class="contact">
+            <h3>Contact Us</h3>
+	    <br>
+	    <a href="">Cairo, Egypt</a>
+            <a href="tel: +2001013309940">01013309940</a>
+            <a href="mailto: WiddWish@gmail.com">WeddWish@gmail.com</a>
+        </div>
+        <div class="social">
+            <h3>Support</h3>
+            <p>Your gift can turn an empty house into a loving home.</p>
+            <div class="side_btn">
+                <a href="login.html">JOIN US TODAY</a>
+            </div>
+        </div>
+        <hr>
+        <p>Copyright &copy; 2025 WeddWish. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+</body>
+</html>
