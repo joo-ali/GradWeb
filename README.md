@@ -1,4 +1,3 @@
-<img width="256" height="160" alt="logo" src="https://github.com/user-attachments/assets/0932f287-0998-4259-9564-2ffaf43156b3" />
 # WeddWish
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=ONE+WISHLIST,+MANY+HEARTS)](https://git.io/typing-svg)
