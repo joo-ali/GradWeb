@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>WiddWish | Contact</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script type="module" src="js/pages.js" defer></script>
+    <script src="js/nav.js" defer></script>
+    <script type="module" src="js/searchUsers.js" defer></script>
+
+</head>
+<body>
+
+<!-- ======================= NAVBAR ======================= -->
+<!-- LEFT -->
+<nav class="nav nav_top">
+  <!-- LEFT -->
+  <div class="nav-left">
+    <a class="logo" href="index.html">
+      <img src="images/logo.png" width="250" alt="WeddWish">
+    </a>
+
+    <a href="user-profile.html" id="profileAvatarLink" class="top-avatar" style="display:none;">
+      <img id="profileAvatarImg" src="images/profile.jpg" alt="Profile">
+    </a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="top-links">
+    <a href="index.html" class="top-link" data-tooltip="Home"><i class="fa fa-home"></i></a>
+
+    <a href="feed.html" id="topFeedLink" class="top-link" data-tooltip="Feed" style="display:none;">
+      <i class="fa fa-rss"></i>
+    </a>
+
+    <a href="user-profile.html" id="topProfileLink" class="top-link" data-tooltip="My Profile" style="display:none;">
+      <i class="fa fa-user"></i>
+    </a>
+
+    <a href="contact.html" class="top-link" data-tooltip="Contact"><i class="fa fa-envelope"></i></a>
+    <a href="about.html" class="top-link" data-tooltip="About Us"><i class="fa fa-info-circle"></i></a>
+
+    <!-- Search icon (بس icon) -->
+    <button id="searchBtn" class="top-link search-icon" type="button" data-tooltip="Search">
+      <i class="fa fa-search"></i>
+    </button>
+
+    <a href="#" id="topLogoutLink" class="top-link" data-tooltip="Logout" style="display:none;">
+      <i class="fa fa-sign-out"></i>
+    </a>
+    
+    <a href="login.html" id="topLoginLink" class="top-link" data-tooltip="Login"><i class="fa fa-sign-in"></i></a>
+    <a href="register.html" id="topRegisterLink" class="top-link" data-tooltip="Register"><i class="fa fa-user-plus"></i></a>
+  </div>
+
+  <!-- Search panel (floating) -->
+  <div id="searchPanel" class="search-panel">
+    <input id="userSearchInput" type="text" placeholder="Search users..." autocomplete="off" />
+    <div id="userSearchResults" class="search-results"></div>
+  </div>
+
+
+
+  <!-- Side Nav -->
+  <div id="mySidenav" class="sidenav">
+     
+    <a href="index.html"><i class="fa fa-home"></i> HOME</a>
+
+    <a href="feed.html" id="feedLink" style="display:none;">
+      <i class="fa fa-rss"></i> FEED
+    </a>
+
+    <a href="login.html" id="loginLink">
+      <i class="fa fa-sign-in"></i> LOGIN
+    </a>
+
+    <a href="register.html" id="registerLink">
+      <i class="fa fa-user-plus"></i> REGISTER
+    </a>
+
+    <a href="user-profile.html" id="profileLink" style="display:none;">
+      <i class="fa fa-user"></i> MY PROFILE
+    </a>
+
+    <a href="#" id="logoutLink" style="display:none;">
+      <i class="fa fa-sign-out"></i> LOGOUT
+    </a>
+
+    <a href="contact.html"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="about.html"><i class="fa fa-info-circle"></i> ABOUT US</a>
+  </div>
+
+  <!-- Menu button -->
+  <span id="menuBtn" onclick="toggleNav()"
+  style="position: fixed; top: 15px; right: 20px; font-size: 30px; cursor: pointer; color: white; z-index: 99999;">
+  ☰
+</span>
+
+</nav>
+<script>
+function toggleNav() {
+  const sidenav = document.getElementById("mySidenav");
+  const menuBtn = document.getElementById("menuBtn");
+  const searchPanel = document.getElementById("searchPanel"); // 👈 الجديد
+
+  if (!sidenav) return;
+
+  if (sidenav.style.width === "250px") {
+    // اقفل المنيو
+    sidenav.style.width = "0";
+    if (menuBtn) menuBtn.innerHTML = "☰";
+  } else {
+    // ✅ اقفل السيرش لو مفتوح
+    if (searchPanel) searchPanel.style.display = "none";
+
+    // افتح المنيو
+    sidenav.style.width = "250px";
+    if (menuBtn) menuBtn.innerHTML = "✖";
+  }
+}
+</script>
+
+<!-- ======================= END NAVBAR ======================= -->
+<div class="auth-body">
+  <div class="auth-container">
+    <section class="auth-card">
+      <div class="auth-top">
+        <div class="auth-badge">Contact us</div>
+        <h1>We are here to help</h1>
+        <p>Send your question and we will respond as soon as possible.</p>
+      </div>
+
+      <form class="auth-form" id="contactForm">
+        <div class="field">
+          <label>Your name</label>
+          <div class="input">
+            <span class="icon">👤</span>
+            <input type="text" id="contactName" required placeholder="Your name" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Email</label>
+          <div class="input">
+            <span class="icon">✉️</span>
+            <input type="email" id="contactEmail" required placeholder="you@example.com" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Message</label>
+          <div class="input" style="align-items:flex-start;">
+            <span class="icon">💬</span>
+            <textarea id="contactMessage" required placeholder="Write your message"
+                      style="width:100%; border:none; outline:none; font-size:14px; min-height:120px;"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="primary">Send message</button>
+
+        <div id="contactMsg" class="msg" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <aside class="auth-side">
+      <div class="side-card">
+        <h2>Need assistance?</h2>
+        <p>Questions about wishlists, donations, or your account? Just reach out.</p>
+        <div class="chips">
+          <span class="chip">Support</span>
+          <span class="chip">Feedback</span>
+          <span class="chip">Partnerships</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+  <script>
+    const contactForm = document.getElementById("contactForm");
+    const contactMsg = document.getElementById("contactMsg");
+
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      contactMsg.textContent = "Thank you for contacting us. We will reply soon.";
+      contactMsg.style.color = "green";
+      contactForm.reset();
+    });
+  </script>
+  <script src="js/footer.js" defer></script>
+  <script src="js/motion.js" defer></script>
+</body>
+</html>
