@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeddWish | Edit Profile</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="js/nav.js" defer></script>
+  <script type="module" src="js/searchUsers.js" defer></script>
+  <script type="module" src="js/edit-profile.js" defer></script>
+  <script src="js/password-toggle.js" defer></script>
+</head>
+
+<body>
+<!-- ======================= NAVBAR ======================= -->
+
+
+<!-- LEFT -->
+<nav class="nav nav_top">
+  <!-- LEFT -->
+  <div class="nav-left">
+    <a class="logo" href="index.html">
+      <img src="images/logo.png" width="250" alt="WeddWish">
+    </a>
+
+    <a href="user-profile.html" id="profileAvatarLink" class="top-avatar" style="display:none;">
+      <img id="profileAvatarImg"
+     src="images/profile.jpeg"
+     alt="Profile"
+     onerror="this.onerror=null;this.src='images/profile.jpeg';">
+
+    </a>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="top-links">
+    <a href="index.html" class="top-link" data-tooltip="Home"><i class="fa fa-home"></i></a>
+
+    <a href="feed.html" id="topFeedLink" class="top-link" data-tooltip="Feed" style="display:none;">
+      <i class="fa fa-rss"></i>
+    </a>
+
+    <a href="user-profile.html" id="topProfileLink" class="top-link" data-tooltip="My Profile" style="display:none;">
+      <i class="fa fa-user"></i>
+    </a>
+
+    <a href="contact.html" class="top-link" data-tooltip="Contact"><i class="fa fa-envelope"></i></a>
+    <a href="about.html" class="top-link" data-tooltip="About Us"><i class="fa fa-info-circle"></i></a>
+
+    <!-- Search icon (بس icon) -->
+    <button id="searchBtn" class="top-link search-icon" type="button" data-tooltip="Search">
+      <i class="fa fa-search"></i>
+    </button>
+
+    <a href="#" id="topLogoutLink" class="top-link" data-tooltip="Logout" style="display:none;">
+      <i class="fa fa-sign-out"></i>
+    </a>
+    
+    <a href="login.html" id="topLoginLink" class="top-link" data-tooltip="Login"><i class="fa fa-sign-in"></i></a>
+    <a href="register.html" id="topRegisterLink" class="top-link" data-tooltip="Register"><i class="fa fa-user-plus"></i></a>
+  </div>
+
+  <!-- Search panel (floating) -->
+  <div id="searchPanel" class="search-panel">
+    <input id="userSearchInput" type="text" placeholder="Search users..." autocomplete="off" />
+    <div id="userSearchResults" class="search-results"></div>
+  </div>
+
+
+
+  <!-- Side Nav -->
+  <div id="mySidenav" class="sidenav">
+     
+    <a href="index.html"><i class="fa fa-home"></i> HOME</a>
+
+    <a href="feed.html" id="feedLink" style="display:none;">
+      <i class="fa fa-rss"></i> FEED
+    </a>
+
+    <a href="login.html" id="loginLink">
+      <i class="fa fa-sign-in"></i> LOGIN
+    </a>
+
+    <a href="register.html" id="registerLink">
+      <i class="fa fa-user-plus"></i> REGISTER
+    </a>
+
+    <a href="user-profile.html" id="profileLink" style="display:none;">
+      <i class="fa fa-user"></i> MY PROFILE
+    </a>
+
+    <a href="#" id="logoutLink" style="display:none;">
+      <i class="fa fa-sign-out"></i> LOGOUT
+    </a>
+
+    <a href="contact.html"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="about.html"><i class="fa fa-info-circle"></i> ABOUT US</a>
+  </div>
+
+  <!-- Menu button -->
+  <span id="menuBtn" onclick="toggleNav()"
+  style="position: fixed; top: 15px; right: 20px; font-size: 30px; cursor: pointer; color: white; z-index: 99999;">
+  ☰
+</span>
+
+</nav>
+<script>
+function toggleNav() {
+  const sidenav = document.getElementById("mySidenav");
+  const menuBtn = document.getElementById("menuBtn");
+  const searchPanel = document.getElementById("searchPanel"); // 👈 الجديد
+
+  if (!sidenav) return;
+
+  if (sidenav.style.width === "250px") {
+    // اقفل المنيو
+    sidenav.style.width = "0";
+    if (menuBtn) menuBtn.innerHTML = "☰";
+  } else {
+    // ✅ اقفل السيرش لو مفتوح
+    if (searchPanel) searchPanel.style.display = "none";
+
+    // افتح المنيو
+    sidenav.style.width = "250px";
+    if (menuBtn) menuBtn.innerHTML = "✖";
+  }
+}
+</script>
+
+
+<!-- ======================= END NAVBAR ======================= -->
+
+  <section class="profile-page edit-profile-page">
+    <form id="editProfileForm" class="edit-profile-card">
+      <div class="edit-profile-head">
+        <div>
+          <span class="info-label">EDIT PROFILE</span>
+          <h1>Edit your profile</h1>
+          <p class="edit-profile-note">Update your public profile details. Email is shown only for reference.</p>
+        </div>
+
+        <div class="edit-avatar-box">
+          <img id="editAvatarPreview" src="images/profile.jpeg" alt="Profile image">
+          <input id="editAvatarFile" type="file" accept="image/*" hidden>
+          <button id="choosePhotoBtn" class="change-photo-btn" type="button">
+            <i class="fa fa-camera"></i>
+            Change photo
+          </button>
+        </div>
+      </div>
+
+      <div class="edit-profile-grid">
+        <label class="form-group">
+          <span>Username</span>
+          <input id="editUsernameInput" type="text" autocomplete="username" placeholder="Username" required minlength="3">
+        </label>
+
+        <label class="form-group readonly-input">
+          <span>Email</span>
+          <input id="editEmailInput" type="email" placeholder="Email" readonly>
+        </label>
+
+        <label class="form-group">
+          <span>InstaPay Number</span>
+          <input id="editInstapayInput" type="text" inputmode="numeric" placeholder="InstaPay Number">
+        </label>
+
+        <label class="form-group">
+          <span>InstaPay Profile Link</span>
+          <input id="editInstaPayLinkInput" type="url" inputmode="url" placeholder="https://instapay.example/profile" required>
+        </label>
+      </div>
+
+      <div class="change-password-panel">
+        <div class="change-password-title">
+          <div>
+            <h2>Change password</h2>
+            <p>Leave these fields empty if you only want to update your profile details.</p>
+          </div>
+        </div>
+
+        <div class="edit-profile-grid password-grid">
+          <label class="form-group">
+            <span>Current Password</span>
+            <div class="profile-password-field password-field">
+              <input id="currentPasswordInput" type="text" class="ww-password-input ww-password-masked" autocomplete="current-password" placeholder="Current password">
+              <button type="button" class="toggle-password" aria-label="Show password" title="Show password">
+              <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Zm0 12.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+              </svg>
+            </button>
+            </div>
+          </label>
+
+          <label class="form-group">
+            <span>New Password</span>
+            <div class="profile-password-field password-field">
+              <input id="newPasswordInput" type="text" class="ww-password-input ww-password-masked" autocomplete="new-password" placeholder="New password" minlength="6">
+              <button type="button" class="toggle-password" aria-label="Show password" title="Show password">
+              <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Zm0 12.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+              </svg>
+            </button>
+            </div>
+          </label>
+
+          <label class="form-group">
+            <span>Confirm New Password</span>
+            <div class="profile-password-field password-field">
+              <input id="confirmPasswordInput" type="text" class="ww-password-input ww-password-masked" autocomplete="new-password" placeholder="Confirm new password" minlength="6">
+              <button type="button" class="toggle-password" aria-label="Show password" title="Show password">
+              <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Zm0 12.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+              </svg>
+            </button>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="edit-profile-actions">
+        <button id="saveProfileBtn" class="primary1 edit-save-btn" type="submit">Save changes</button>
+        <button id="cancelEditBtn" class="primary1 edit-cancel-btn" type="button">Cancel</button>
+        <span id="editStatus"></span>
+      </div>
+    </form>
+  </section>
+  <script src="js/footer.js" defer></script>
+  <script src="js/motion.js" defer></script>
+</body>
+</html>
