@@ -7622,74 +7622,68 @@ body.search-drawer-open .nav.nav_top{
   }
 }
 
+
 /* =========================================================
-   PROFILE AVATAR / 3-DOTS STACKING FIX
-   Keep the avatar visually underneath the 3-dots button.
-   This fixes the button being swallowed by the profile image
-   on smaller widths.
+   PROFILE DOTS RESPONSIVE POSITION FIX
+   Keep the old full-screen dots/avatar relationship on smaller windows.
+   No new stacking/card shape changes: the button stays at the same top-right
+   offset relative to the avatar instead of moving to the middle/bottom.
 ========================================================= */
 .profile-avatar{
-  position: relative !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: fit-content !important;
-  padding: 10px 18px 10px 10px !important;
   overflow: visible !important;
-  isolation: isolate !important;
 }
 
-.profile-avatar #profileAvatarImgLarge,
-.profile-avatar > img{
-  position: relative !important;
-  z-index: 1 !important;
-  display: block !important;
-}
-
-.profile-avatar .profile-menu-btn{
-  position: absolute !important;
-  z-index: 20 !important;
-  top: 50% !important;
-  right: -6px !important;
-  transform: translateY(-50%) !important;
-  width: 44px !important;
-  height: 56px !important;
-  border-radius: 18px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background: rgba(2, 9, 35, .72) !important;
-  border: 1px solid rgba(255, 255, 255, .16) !important;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, .32) !important;
-  color: #ffffff !important;
-}
-
-.profile-avatar .profile-menu-btn:hover,
-.profile-avatar .profile-menu-btn:focus-visible{
-  transform: translateY(-50%) !important;
-  background: rgba(255, 215, 64, .18) !important;
-  border-color: rgba(255, 215, 64, .42) !important;
-  outline: none !important;
-}
-
-.profile-avatar .profile-menu{
-  z-index: 30 !important;
-  top: calc(50% + 34px) !important;
-  right: -6px !important;
-}
-
-@media (max-width: 760px){
+@media (max-width: 900px){
   .profile-avatar{
-    padding: 8px 16px 8px 8px !important;
+    padding: 14px 48px 14px 14px !important;
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
-  .profile-avatar .profile-menu-btn{
-    right: -4px !important;
-    width: 42px !important;
-    height: 54px !important;
+  .profile-avatar .profile-menu-btn,
+  .profile-menu-btn{
+    top: 18px !important;
+    right: 4px !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 14px !important;
   }
 
-  .profile-avatar .profile-menu{
-    right: -4px !important;
+  .profile-avatar .profile-menu-btn:hover,
+  .profile-avatar .profile-menu-btn:focus-visible,
+  .profile-menu-btn:hover,
+  .profile-menu-btn:focus-visible{
+    transform: translateY(-2px) !important;
+  }
+
+  .profile-avatar .profile-menu,
+  .profile-menu{
+    top: 64px !important;
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+
+@media (max-width: 520px){
+  .profile-avatar{
+    padding: 12px 44px 12px 12px !important;
+  }
+
+  .profile-avatar .profile-menu-btn,
+  .profile-menu-btn{
+    top: 16px !important;
+    right: 4px !important;
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .profile-avatar .profile-menu,
+  .profile-menu{
+    top: 58px !important;
+    right: 0 !important;
   }
 }
