@@ -7740,3 +7740,52 @@ body.ww-modal-open{
     max-height:calc(100dvh - 24px) !important;
   }
 }
+
+/* ===== Responsive gift modal: keep it visible on small windows ===== */
+@media (max-width: 760px), (max-height: 760px){
+  #paymentStepModal,
+  #donationFormModal{
+    align-items:flex-start !important;
+    justify-content:center !important;
+    padding:12px !important;
+    padding-top:max(12px, env(safe-area-inset-top)) !important;
+    overflow-y:auto !important;
+  }
+
+  #paymentStepModal .ww-modal-card,
+  #donationFormModal .ww-modal-card{
+    width:min(100%, 520px) !important;
+    max-height:calc(100dvh - 24px) !important;
+    margin:0 auto !important;
+    overflow-y:auto !important;
+    -webkit-overflow-scrolling:touch;
+  }
+}
+
+@media (max-height: 560px){
+  #paymentStepModal,
+  #donationFormModal{
+    padding:8px !important;
+    padding-top:8px !important;
+  }
+
+  #paymentStepModal .ww-modal-card,
+  #donationFormModal .ww-modal-card{
+    max-height:calc(100dvh - 16px) !important;
+    border-radius:16px !important;
+  }
+
+  #donationFormModal label{
+    margin-top:7px !important;
+    margin-bottom:4px !important;
+  }
+
+  #donationFormModal .form-control{
+    padding:9px 12px !important;
+  }
+
+  #receiptPreview{
+    width:min(190px, 62vw) !important;
+    height:min(190px, 62vw) !important;
+  }
+}
