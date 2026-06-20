@@ -7879,3 +7879,48 @@ body.index-nav-test .product .product_container .item .item_content br{
     min-height:0 !important;
   }
 }
+
+
+/* =========================================================
+   INDEX SIDE GOLD STRIPS
+   Adds the same soft gold separator above and below the side section.
+========================================================= */
+body.index-nav-test .ww-side-section{
+  width: 100% !important;
+  position: relative !important;
+  padding: 64px 0 !important;
+  margin: 0 !important;
+  border-top: 1px solid rgba(255,215,64,.22) !important;
+  border-bottom: 1px solid rgba(255,215,64,.22) !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+body.index-nav-test .ww-side-section::before,
+body.index-nav-test .ww-side-section::after{
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 1px !important;
+  pointer-events: none !important;
+  background: linear-gradient(90deg, transparent, rgba(255,215,64,.72), transparent) !important;
+}
+
+body.index-nav-test .ww-side-section::before{
+  top: 0 !important;
+}
+
+body.index-nav-test .ww-side-section::after{
+  bottom: 0 !important;
+}
+
+body.index-nav-test .ww-side-section .side{
+  margin: 0 auto !important;
+}
+
+@media (max-width: 900px){
+  body.index-nav-test .ww-side-section{
+    padding: 42px 0 !important;
+  }
+}
