@@ -31,9 +31,9 @@
           <i class="fa fa-whatsapp" aria-hidden="true"></i>
           <span>01013309940</span>
         </a>
-        <a href="mailto:WeddWish@gmail.com">
+        <a href="mailto:WeddWish1@gmail.com">
           <i class="fa fa-envelope" aria-hidden="true"></i>
-          <span>WeddWish@gmail.com</span>
+          <span>WeddWish1@gmail.com</span>
         </a>
       </div>
 
