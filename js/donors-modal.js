@@ -78,11 +78,34 @@ document.addEventListener("DOMContentLoaded", () => {
     render();
   }
 
+  function focusAndScrollToDonorsModal() {
+    const card = modal.querySelector(".ww-modal-card");
+    if (card) {
+      card.scrollTop = 0;
+      if (!card.hasAttribute("tabindex")) card.setAttribute("tabindex", "-1");
+    }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        try {
+          modal.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+          card?.focus({ preventScroll: true });
+        } catch {
+          try { modal.scrollIntoView(true); } catch {}
+        }
+      });
+    });
+  }
+
   function openModal() {
     modal.style.display = "flex";
+    document.body.classList.add("ww-modal-open");
+    focusAndScrollToDonorsModal();
   }
+
   function closeModal() {
     modal.style.display = "none";
+    document.body.classList.remove("ww-modal-open");
   }
 
   function fillItems() {
