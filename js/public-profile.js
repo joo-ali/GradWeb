@@ -695,6 +695,25 @@ function startInstaPayThenReceiptForm(){
   openDonationFormAfterPayment();
 }
 
+function setWwModalOpenState(){
+  const anyOpen = Array.from(document.querySelectorAll('.ww-modal')).some(m => getComputedStyle(m).display !== 'none');
+  document.body.classList.toggle('ww-modal-open', anyOpen);
+}
+
+function showWwModal(modal){
+  if(!modal) return;
+  modal.style.display = 'flex';
+  document.body.classList.add('ww-modal-open');
+  const card = modal.querySelector('.ww-modal-card');
+  if(card) card.scrollTop = 0;
+}
+
+function hideWwModal(modal){
+  if(!modal) return;
+  modal.style.display = 'none';
+  setWwModalOpenState();
+}
+
 function setupPaymentStepModal(){
   const modal = document.getElementById("paymentStepModal");
   const closeBtn = document.getElementById("closePaymentStepModal");
@@ -705,7 +724,7 @@ function setupPaymentStepModal(){
 
   if(!modal) return;
 
-  const close = () => { modal.style.display = "none"; };
+  const close = () => { hideWwModal(modal); };
   closeBtn?.addEventListener("click", close);
   modal.addEventListener("click", (e)=>{ if(e.target === modal) close(); });
 
@@ -729,7 +748,7 @@ function setupPaymentStepModal(){
       targetEl.textContent = "بعد ما تبعت الهدية ارجع وارفع صورة الإيصال. اضغط للانتقال إلى InstaPay";
       targetEl.setAttribute("dir", "rtl");
     }
-    modal.style.display = "flex";
+    showWwModal(modal);
   };
 }
 
@@ -938,7 +957,11 @@ function openDonationForm(){
     itemSelect.style.display = (choice === "item") ? "block" : "none";
   }
 
-  if(formModal) formModal.style.display = "flex";
+  if(formModal){
+    const paymentModal = document.getElementById("paymentStepModal");
+    hideWwModal(paymentModal);
+    showWwModal(formModal);
+  }
 }
 
 
@@ -1016,12 +1039,13 @@ function setupDonationFormHandlers(){
   });
 
   const closeAll = ()=>{
-    formModal.style.display="none";
+    hideWwModal(formModal);
     if(msgEl) msgEl.textContent = "";
     setSubmitGiftLoading(false, "Submit gift");
   };
   closeBtn?.addEventListener("click", closeAll);
   cancelBtn?.addEventListener("click", closeAll);
+  formModal.addEventListener("click", (e)=>{ if(e.target === formModal) closeAll(); });
 
   // submit -> upload supabase -> update strapi wishlist
   submitBtn.addEventListener("click", async ()=>{
@@ -1163,7 +1187,7 @@ clampItemDonatedToPrice(it);
         : "✅ Gift submitted! Email notification could not be sent.";
 
       // refresh UI by reloading public user
-      setTimeout(()=>{ formModal.style.display="none"; window.location.reload(); }, 600);
+      setTimeout(()=>{ hideWwModal(formModal); window.location.reload(); }, 600);
 
     }catch(err){
       console.error(err);
