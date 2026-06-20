@@ -700,12 +700,36 @@ function setWwModalOpenState(){
   document.body.classList.toggle('ww-modal-open', anyOpen);
 }
 
+function focusAndScrollToModal(modal){
+  if(!modal) return;
+
+  const card = modal.querySelector('.ww-modal-card');
+  if(card){
+    card.scrollTop = 0;
+    if(!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '-1');
+  }
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      try{
+        // Keep the old modal UI, but move the current viewport to it automatically
+        // when the browser window is small or the page is scrolled.
+        modal.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+        card?.focus({ preventScroll: true });
+      }catch{
+        try{ modal.scrollIntoView(true); }catch{}
+      }
+    });
+  });
+}
+
 function showWwModal(modal){
   if(!modal) return;
   modal.style.display = 'flex';
   document.body.classList.add('ww-modal-open');
   const card = modal.querySelector('.ww-modal-card');
   if(card) card.scrollTop = 0;
+  focusAndScrollToModal(modal);
 }
 
 function hideWwModal(modal){
