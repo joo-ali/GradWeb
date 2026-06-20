@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WeddWish is a wedding wishlist platform where couples create wishlists and loved ones send meaningful gifts with receipt tracking and real-time updates.">
-    <title>WiddWish | Contact</title>
+    <title>WiddWish | About Us</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Latest compiled and minified CSS -->
@@ -14,13 +14,14 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-        <script type="module" src="js/pages.js" defer></script>
+    <script type="module" src="js/pages.js" defer></script>
     <script src="js/nav.js" defer></script>
     <script type="module" src="js/search-drawer.js" defer></script>
 </head>
-<body class="contact-page">
+<body class="about-page">
+     <!-- ======================= NAVBAR ======================= -->
 
-<!-- ======================= NAVBAR ======================= -->
+
 <!-- LEFT -->
 <nav class="nav nav_top">
   <!-- LEFT -->
@@ -96,72 +97,87 @@
 
 </nav>
 <!-- ======================= END NAVBAR ======================= -->
-<div class="auth-body">
-  <div class="auth-container">
-    <section class="auth-card">
-      <div class="auth-top">
-        <div class="auth-badge">Contact us</div>
-        <h1>We are here to help</h1>
-        <p>Send your question and we will respond as soon as possible.</p>
-      </div>
 
-      <form class="auth-form" id="contactForm">
-        <div class="field">
-          <label>Your name</label>
-          <div class="input">
-            <span class="icon">👤</span>
-            <input type="text" id="contactName" required placeholder="Your name" />
-          </div>
+    <!-- --------------------------------------------MAIN----------------------------------------------------------->
+    <div class="main_about">
+        <div class="main_content_about">
+            <h2>What We Do?</h2>
         </div>
+    </div>
+    <!-- -------------------------------------------ABOUT US--------------------------------------------------------->
+    <!-- --------------------------------------------HOW WE HELP--------------------------------------------------------->
+    <div class="product">
+        <h2>HOW WE HELP</h2>
+        <div class="product_container">
 
-        <div class="field">
-          <label>Email</label>
-          <div class="input">
-            <span class="icon">✉️</span>
-            <input type="email" id="contactEmail" required placeholder="you@example.com" />
-          </div>
+            <div class="item">
+                <div class="item_img">
+                    <img src="images/pro1.svg">
+                </div>
+                <div class="item_content">
+                    <h3>Personalized Wishlists</h3><br>
+     		    <p>Couples can easily create and customize their wishlist of essential wedding items.</p>
+                    <br><br><br>
+                </div>
+            </div>
+            
+            <div class="item">
+                <div class="item_img">
+                    <img src="images/pro2.svg">
+                </div>
+                <div class="item_content">
+                    <h3>Secure Contributions</h3><br>
+      		    <p>Gift givers can help complete specific gifts or the total wishlist with full transparency.</p>
+                    <br><br>
+                </div>
+	    </div>
+	    <div class="item">
+                <div class="item_img">
+                    <img src="images/pro3.svg">
+                </div>
+                <div class="item_content">
+                    <h3>Real-Time Tracking</h3><br>
+   		    <p>Both gift givers and couples can track gift progress and receive instant updates.</p>
+                    <br><br>
+                </div>
+	     </div>
         </div>
-
-        <div class="field">
-          <label>Message</label>
-          <div class="input" style="align-items:flex-start;">
-            <span class="icon">💬</span>
-            <textarea id="contactMessage" required placeholder="Write your message"
-                      style="width:100%; border:none; outline:none; font-size:14px; min-height:120px;"></textarea>
-          </div>
+    </div>
+    <hr>
+    <!-- --------------------------------------------FOOTER-------------------------------------------------------->
+        <footer>
+        <div class="pages"> 
+            <a href="index.html"><img class="aimg" src="images/logo_green.png" width="250"></a> 
+            <p>WeddWish brings people together by turning traditional wedding gifts into a collaborative experience—couples build their wishlist, gift givers celebrate them with meaningful gifts, and everyone stays connected through real-time updates.</p>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
         </div>
-
-        <button type="submit" class="primary">Send message</button>
-
-        <div id="contactMsg" class="msg" aria-live="polite"></div>
-      </form>
-    </section>
-
-    <aside class="auth-side">
-      <div class="side-card">
-        <h2>Need assistance?</h2>
-        <p>Questions about wishlists, gifts, or your account? Just reach out.</p>
-        <div class="chips">
-          <span class="chip">Support</span>
-          <span class="chip">Feedback</span>
-          <span class="chip">Partnerships</span>
+        <div class="doc">
+            <h3>Navigation</h3>
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="login.html">GIFT</a>
+            <a href="contact.html">CONTACT</a>
         </div>
-      </div>
-    </aside>
-  </div>
-</div>
-
-  <script>
-    const contactForm = document.getElementById("contactForm");
-    const contactMsg = document.getElementById("contactMsg");
-
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      contactMsg.textContent = "Thank you for contacting us. We will reply soon.";
-      contactMsg.style.color = "green";
-      contactForm.reset();
-    });
-  </script>
+        <div class="contact">
+            <h3>Contact Us</h3>
+	    <br>
+	    <a href="">Cairo, Egypt</a>
+            <a href="tel: +2001013309940">01013309940</a>
+            <a href="mailto:WeddWish1@gmail.com">WeddWish1@gmail.com</a>
+        </div>
+        <div class="social">
+            <h3>Support</h3>
+            <p>Your gift can turn an empty house into a loving home.</p>
+            <div class="side_btn">
+                <a href="login.html">JOIN US TODAY</a>
+            </div>
+        </div>
+        <hr>
+        <p>Copyright &copy; 2025 WeddWish. All rights reserved.</p>
+    </footer>
   <script src="js/footer.js" defer></script>
   <script src="js/motion.js" defer></script>
 </body>
