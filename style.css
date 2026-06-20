@@ -7687,3 +7687,56 @@ body.search-drawer-open .nav.nav_top{
     right: 0 !important;
   }
 }
+
+
+/* ===== Final contact textarea + gift modal viewport fix ===== */
+#contactMessage{
+  color:#111 !important;
+  caret-color:#111 !important;
+  background:#fff !important;
+}
+#contactMessage::placeholder{
+  color:#777 !important;
+}
+
+body.ww-modal-open{
+  overflow:hidden !important;
+}
+
+#paymentStepModal,
+#donationFormModal{
+  position:fixed !important;
+  inset:0 !important;
+  z-index:2147483000 !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:18px !important;
+  overflow-y:auto !important;
+  overscroll-behavior:contain !important;
+}
+
+#paymentStepModal .ww-modal-card,
+#donationFormModal .ww-modal-card{
+  margin:auto !important;
+  max-height:calc(100dvh - 36px) !important;
+  overflow-y:auto !important;
+  -webkit-overflow-scrolling:touch;
+}
+
+#donationFormModal .ww-modal-close,
+#paymentStepModal .ww-modal-close{
+  z-index:3 !important;
+}
+
+@media (max-width: 640px){
+  #paymentStepModal,
+  #donationFormModal{
+    padding:12px !important;
+    align-items:center !important;
+  }
+  #paymentStepModal .ww-modal-card,
+  #donationFormModal .ww-modal-card{
+    width:min(100%, 520px) !important;
+    max-height:calc(100dvh - 24px) !important;
+  }
+}
