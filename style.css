@@ -7924,3 +7924,128 @@ body.index-nav-test .ww-side-section .side{
     padding: 42px 0 !important;
   }
 }
+
+
+/* =========================================================
+   MOBILE NAVBAR HARD LOCK FIX
+   Keeps the navbar fully visible on iOS/Android while scrolling.
+   No UI redesign: only stabilizes the existing navbar position.
+========================================================= */
+:root{
+  --ww-nav-height: 72px !important;
+}
+
+html, body{
+  overflow-x: hidden !important;
+}
+
+body:has(.nav.nav_top){
+  padding-top: var(--ww-nav-height) !important;
+}
+
+.nav.nav_top,
+body .nav.nav_top{
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: var(--ww-nav-height) !important;
+  min-height: var(--ww-nav-height) !important;
+  max-height: var(--ww-nav-height) !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  will-change: transform !important;
+  z-index: 2147482000 !important;
+}
+
+.nav.nav_top .logo,
+.nav.nav_top .logo a{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: calc(var(--ww-nav-height) - 8px) !important;
+  max-height: calc(var(--ww-nav-height) - 8px) !important;
+  overflow: visible !important;
+}
+
+.nav.nav_top .logo img{
+  height: calc(var(--ww-nav-height) - 10px) !important;
+  max-height: calc(var(--ww-nav-height) - 10px) !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.nav.nav_top #menuBtn,
+#menuBtn{
+  position: static !important;
+  flex: 0 0 var(--ww-nav-control-size, 46px) !important;
+  transform: none !important;
+}
+
+body.nav-menu-open .nav.nav_top,
+body.search-drawer-open .nav.nav_top,
+body.ww-scroll-locked .nav.nav_top{
+  top: 0 !important;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-transform: translate3d(0, 0, 0) !important;
+}
+
+@media (max-width: 720px){
+  :root{
+    --ww-nav-height: 68px !important;
+    --ww-nav-control-size: 42px !important;
+  }
+
+  body:has(.nav.nav_top){
+    padding-top: var(--ww-nav-height) !important;
+  }
+
+  .nav.nav_top,
+  body .nav.nav_top{
+    height: var(--ww-nav-height) !important;
+    min-height: var(--ww-nav-height) !important;
+    max-height: var(--ww-nav-height) !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .nav.nav_top .logo,
+  .nav.nav_top .logo a{
+    height: 58px !important;
+    max-height: 58px !important;
+  }
+
+  .nav.nav_top .logo img{
+    width: 104px !important;
+    height: 58px !important;
+    max-width: 104px !important;
+    max-height: 58px !important;
+  }
+
+  .nav.nav_top .nav-left{
+    align-items: center !important;
+    min-height: 0 !important;
+  }
+
+  .nav.nav_top .top-links,
+  .nav.nav_top .top-links.index-only-actions{
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 390px){
+  .nav.nav_top .logo img{
+    width: 96px !important;
+    max-width: 96px !important;
+  }
+}
