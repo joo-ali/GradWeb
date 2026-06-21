@@ -3,7 +3,7 @@
 // ✅ Strapi / ngrok base
 export const API_BASE =
   localStorage.getItem("API_BASE")?.trim()?.replace(/\/$/, "") ||
-  "https://216c-156-216-97-160.ngrok-free.app";
+  "https://0950-156-216-97-160.ngrok-free.app";
 
 // ✅ Supabase
 export const SUPABASE_URL = "https://cprjyoteonirclrakvio.supabase.co";
