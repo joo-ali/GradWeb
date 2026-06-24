@@ -21,7 +21,7 @@ export const NGROK_WEB_BASE =
   localStorage.getItem("WEB_BASE")?.trim()?.replace(/\/$/, "") ||
   "https://lianne-sauciest-cory.ngrok-free.dev";
 
-export const WEB_APP_PATH = "/GradWep";
+export const WEB_APP_PATH = "GradWep/";
 
 export const WEB_BASE =
   (location.hostname === "127.0.0.1" || location.hostname === "localhost")
