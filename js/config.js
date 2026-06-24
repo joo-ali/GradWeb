@@ -3,7 +3,7 @@
 // ✅ Strapi / ngrok base
 export const API_BASE =
   localStorage.getItem("API_BASE")?.trim()?.replace(/\/$/, "") ||
-  "https://0950-156-216-97-160.ngrok-free.app";
+  "https://motivated-fitness-95fac0701a.strapiapp.com";
 
 // ✅ Supabase
 export const SUPABASE_URL = "https://cprjyoteonirclrakvio.supabase.co";
